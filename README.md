@@ -3,6 +3,18 @@ A Systematic Verification and Structured Revision of Humanity’s Last Exam
 
 ## Overview
 
+Humanity’s Last Exam (HLE) is a high-difficulty, multi-domain benchmark designed to evaluate advanced reasoning capabilities across diverse scientific and technical domains.
+
+Following its public release, members of the open-source community raised concerns regarding the reliability of certain items. Community discussions and informal replication attempts suggested that some problems might contain:
+
+- Incorrect final answers  
+- Incomplete or internally inconsistent rationales  
+- Ambiguous or underspecified problem statements  
+- Format-induced semantic distortions  
+
+These issues, while not universal, highlight structural risks inherent to high-difficulty benchmark construction. When left unaddressed, such defects may introduce unintended evaluation bias, distort model ranking comparisons, or reduce interpretability.
+
+
 **HLE-Verified** is a systematically audited and reliability-enhanced version of the **Humanity’s Last Exam (HLE)** benchmark.
 
 The dataset contains **2,500 items**, each verified through structured auditing and, where necessary, conservative revision.
@@ -32,11 +44,14 @@ The dataset is partitioned into three mutually exclusive subsets:
 
 Humanity’s Last Exam (HLE) is a high-difficulty, multi-domain benchmark spanning:
 
-- Mathematics  
+- Math  
 - Physics  
 - Chemistry  
 - Biology / Medicine  
-- Computer Science  
+- Computer Science/AI
+- Engineering
+- Humanities/Social Science
+- Other
 
 High-difficulty benchmarks carry structural risks:
 
