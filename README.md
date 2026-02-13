@@ -207,3 +207,17 @@ HLE-Verified supports research in:
 - The Uncertain subset remains open for future refinement.
 - Repairs preserve original evaluation objectives but may not exhaust all possible interpretations.
 
+---
+
+## Cite
+
+If you use **HLE-Verified** in your research, please cite:
+
+```bibtex
+@techreport{hle_verified_2026,
+  title        = {HLE-Verified: A Systematic Verification and Structured Revision of Humanity’s Last Exam},
+  author       = {Alibaba Group, Data \& Qwen Team},
+  institution  = {Technical Report},
+  year         = {2026}
+}
+```
