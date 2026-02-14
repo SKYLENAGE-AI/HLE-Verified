@@ -250,6 +250,30 @@ HLE-Verified supports research in:
 
 ---
 
+## Disclaimer and Community Contribution
+
+HLE-Verified is constructed through systematic auditing and structured revision under practical constraints of time, domain expertise, and available verification resources.
+
+While we aim to provide a reliability-enhanced benchmark, we do not claim that all remaining issues have been exhaustively identified or resolved. In particular:
+
+- Some items in the **Revision** subset may admit alternative valid interpretations.
+- The **Uncertain** subset reflects conservative retention decisions under limited adjudication evidence.
+- Domain-specific nuances may still require deeper expert validation.
+
+We welcome continued scrutiny and contributions from the open-source community.
+
+If you identify potential issues, inconsistencies, or opportunities for improvement:
+
+- Please open an **Issue** describing the case.
+- Or submit a **Pull Request** with supporting evidence and justification.
+
+Constructive feedback, reproducible analysis, and domain-expert input are especially appreciated.
+
+We view HLE-Verified as a **living benchmark infrastructure**, and community-driven refinement is an essential part of its long-term reliability.
+
+---
+
+
 ## Cite
 
 If you use **HLE-Verified** in your research, please cite:
