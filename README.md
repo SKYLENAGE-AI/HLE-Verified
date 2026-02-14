@@ -191,6 +191,14 @@ These patterns indicate that HLE’s problematicness is **structured rather than
 
 ## Leaderboard Comparison
 
+### HLE-Raw vs HLE-Verified on Revised Set
+
+![HLE-Raw vs HLE-Verified on Revised Set](bars_raw_vs_verified_subset.png)
+
+[Download Full PDF](bars_raw_vs_verified_subset.pdf)
+
+---
+
 ### HLE-Verified Leaderboard
 
 ![HLE-Verified Leaderboard](leaderboard_HLE_Verified.png)
@@ -204,14 +212,6 @@ These patterns indicate that HLE’s problematicness is **structured rather than
 ![HLE-Raw Leaderboard](leaderboard_HLE_Raw_Text_Full.png)
 
 [Download Full PDF](leaderboard_HLE_Raw_Text_Full.pdf)
-
----
-
-### HLE-Raw vs HLE-Verified on Revised Set
-
-![HLE-Raw vs HLE-Verified on Revised Set](bars_raw_vs_verified_subset.png)
-
-[Download Full PDF](bars_raw_vs_verified_subset.pdf)
 
 ---
 
