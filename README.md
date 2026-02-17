@@ -279,10 +279,24 @@ We view HLE-Verified as a **living benchmark infrastructure**, and community-dri
 If you use **HLE-Verified** in your research, please cite:
 
 ```bibtex
-@techreport{hle_verified_2026,
-  title        = {HLE-Verified: A Systematic Verification and Structured Revision of Humanity’s Last Exam},
-  author       = {Alibaba Group, Data \& Qwen Team},
-  institution  = {Technical Report},
-  year         = {2026}
+@misc{zhai2026hleverifiedsystematicverificationstructured,
+      title={HLE-Verified: A Systematic Verification and Structured Revision of Humanity's Last Exam}, 
+      author={Weiqi Zhai and Zhihai Wang and Jinghang Wang and Boyu Yang and Xiaogang Li and Xiang Xu and Bohan Wang and Peng Wang and Xingzhe Wu and Anfeng Li and Qiyuan Feng and Yuhao Zhou and Shoulin Han and Wenjie Luo and Yiyuan Li and Yaxuan Wang and Ruixian Luo and Guojie Lin and Peiyao Xiao and Chengliang Xu and Ben Wang and Zeyu Wang and Zichao Chen and Jianan Ye and Yijie Hu and Jialong Chen and Zongwen Shen and Yuliang Xu and An Yang and Bowen Yu and Dayiheng Liu and Junyang Lin and Hu Wei and Que Shen and Bing Zhao},
+      year={2026},
+      eprint={2602.13964},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.13964}, 
+}
+```
+```bibtex
+@article{phan2025humanitysexam,
+title = {A benchmark of expert-level academic questions to assess {AI} capabilities},
+author = {{Center for AI Safety} and {Scale AI} and {HLE Contributors Consortium}},
+journal = {Nature},
+volume = {649},
+pages = {1139--1146},
+year = {2026},
+doi = {10.1038/s41586-025-09962-4}
 }
 ```
