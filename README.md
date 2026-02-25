@@ -32,8 +32,8 @@ The dataset is partitioned into three mutually exclusive subsets:
 
 | Subset | Size | Description |
 |--------|------|-------------|
-| **Gold** | 641 | Fully validated, no modification required |
-| **Revision** | 1,170 | Corrected under preserved evaluation objectives and re-verified |
+| **Gold** | 668 | Fully validated, no modification required |
+| **Revision** | 1,143 | Corrected under preserved evaluation objectives and re-verified |
 | **Uncertain** | 689 | Validity cannot be conclusively determined under current evidence |
 
 **Total: 2,500 items**
