@@ -99,34 +99,53 @@ Each record contains both content fields and structured verification metadata.
 
 ```json
 {
-  "id": 1024,
+  "id": "6696c3734c196f1af6a16fcb",
   "question": "The original or revised question",
   "original_question": "[Optional] Present only if the question was revised.",
+
+  "image": "[Optional] Image URL/path/ID. Empty string if not applicable.",
+  "image_preview": "[Optional] Preview URL/path/ID, or null.",
+  "rationale_image": "[Optional] Rationale image URL/path/ID, or null.",
+
   "answer": "The original or revised final answer",
+  "answer_type": "exactMatch | multipleChoice | ...",
   "original_answer": "[Optional] Present only if the answer was revised.",
+
   "rationale": "The original or revised reasoning",
   "original_rationale": "[Optional] Present only if the rationale was revised.",
+
+  "author_name": "[Optional] Author or contributor name/ID.",
+  "raw_subject": "[Optional] Original subject label from source benchmark.",
+  "category": "[Optional] Normalized category label used in this release.",
+  "canary": "[Optional] Canary string for training-corpus exclusion.",
+
+  "Verified_Classes": "Gold subset | Revision subset | Uncertain subset",
+
   "verify_meta_info": {
     "problem_verify": {
       "is_valid": 1,
-      "error_type": null,
-      "error_reason": null
+      "error_type": "Q1 | Q2 | Q3 | Q4 | Q5 | 0",
+      "error_description": "[Optional] Human-readable description of the defect type.",
+      "error_type_verify_reason": "[Optional] Short justification for the label."
     },
     "answer_verify": {
       "is_valid": 1,
-      "error_type": null,
-      "error_reason": null
+      "error_type": "A1 | A2 | A3 | A4 | 0",
+      "error_description": "[Optional] Human-readable description of the defect type.",
+      "error_type_verify_reason": "[Optional] Short justification for the label."
     },
     "rationale_verify": {
       "is_valid": 1,
-      "error_type": null,
-      "error_reason": null
+      "error_type": "S1 | S2 | ... | S10 | 0",
+      "error_description": "[Optional] Human-readable description of the defect type.",
+      "error_type_verify_reason": "[Optional] Short justification for the label."
     }
   }
 }
 ```
 
 ---
+
 ## Field Description
 
 ### Core Content Fields
@@ -140,8 +159,23 @@ Each record contains both content fields and structured verification metadata.
 - `original_question` *(optional)*  
   Present **only if** the problem statement was revised; stores the original HLE question.
 
+- `image` *(optional)*  
+  Image reference (URL/path/ID). Empty string if not applicable.
+
+- `image_preview` *(optional)*  
+  Optional preview reference for the image (may be `null`).
+
+- `rationale_image` *(optional)*  
+  Optional image reference used in the rationale (may be `null`).
+
 - `answer`  
-  The final answer used for evaluation (original or revised).
+  The final answer used for evaluation (original or revised).  
+  Depending on `answer_type`, the value may be:
+  - a string (e.g., `"D"`)
+  - a number (e.g., `18`)
+
+- `answer_type`  
+  The evaluation type for the answer (e.g., `exactMatch`, `multipleChoice`).
 
 - `original_answer` *(optional)*  
   Present **only if** the answer was revised; stores the original HLE answer key.
@@ -151,6 +185,26 @@ Each record contains both content fields and structured verification metadata.
 
 - `original_rationale` *(optional)*  
   Present **only if** the rationale was revised; stores the original HLE rationale.
+
+- `author_name` *(optional)*  
+  Author or contributor identifier (if available).
+
+- `raw_subject` *(optional)*  
+  Original subject label from the source benchmark.
+
+- `category` *(optional)*  
+  Normalized category label used in this release.
+
+- `canary` *(optional)*  
+  Canary string indicating the benchmark data should not appear in training corpora.
+
+- `Verified_Classes`  
+  Dataset-level subset label. One of:
+  - `Gold subset`
+  - `Revision subset`
+  - `Uncertain subset`
+
+---
 
 ### Verification Metadata (`verify_meta_info`)
 
@@ -165,14 +219,25 @@ Each verification object contains:
 - `is_valid`
   - `1` = valid
   - `0` = invalid
-- `error_type` *(only if invalid)*  
-  Integer defect category/type identifier.
-- `error_reason` *(only if invalid)*  
-  Short explanation describing why the component was judged invalid.
 
-> **Note**  
-> Items marked as **Uncertain** at the dataset level may still include partial verification signals.  
-> When validity cannot be established under available evidence, the conservative decision is to retain the item in the **Uncertain** subset.
+- `error_type` *(only if invalid; otherwise `0`)*  
+  Defect category/type identifier:
+  - **Problem-level:** `Q1–Q5`
+  - **Answer-level:** `A1–A4`
+  - **Rationale-level:** `S1–S10`
+
+- `error_description` *(optional; typically present if invalid)*  
+  Human-readable description of the defect type.
+
+- `error_type_verify_reason` *(optional)*  
+  Short justification describing why the component was judged invalid (or how it was verified).
+
+---
+
+> **Note**
+>
+> - Items marked as `Uncertain subset` at the dataset level may still include partial verification signals at the component level.
+> - When validity cannot be established under available evidence, the conservative decision is to retain the item in the `Uncertain subset` rather than forcing a valid/invalid outcome.
 
 ---
 
