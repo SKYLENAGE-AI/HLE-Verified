@@ -234,13 +234,6 @@ Each verification object contains:
 
 ---
 
-> **Note**
->
-> - Items marked as `Uncertain subset` at the dataset level may still include partial verification signals at the component level.
-> - When validity cannot be established under available evidence, the conservative decision is to retain the item in the `Uncertain subset` rather than forcing a valid/invalid outcome.
-
----
-
 ## Statistical Observations
 
 Structured verification reveals systematic patterns:
